@@ -11,6 +11,7 @@
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://qwe123456hh.github.io/xinanhe/img/cover.jpg">
 <meta property="og:url" content="https://qwe123456hh.github.io/xinanhe/">
+<link rel="preload" as="image" href="img/cover.jpg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%238c1c1c'/%3E%3Cpath d='M32 12l5.6 12.4L51 26l-9.6 9.2 2.4 13.4L32 42.4 20.2 48.6l2.4-13.4L13 26l13.4-1.6z' fill='%23e8c979'/%3E%3C/svg%3E">
 <style>
 :root{
@@ -406,15 +407,15 @@ footer .fm{display:flex;justify-content:space-between;gap:14px;margin-top:14px;c
     <h2 class="serif rv">影像 · 九宫格</h2>
     <p class="hint rv">点开可以看大图</p>
     <div class="grid9 rv" id="g9">
-      <figure data-cap="纪念亭 · 燕赵遗风"><img src="img/cover.jpg" alt="纪念亭与燕赵遗风碑" loading="lazy"></figure>
-      <figure data-cap="陵园大门 · 红五星"><img src="img/gate.jpg" alt="陵园大门" loading="lazy"></figure>
-      <figure data-cap="烈士公墓区"><img src="img/tombs.jpg" alt="烈士公墓区" loading="lazy" style="object-position:center bottom"></figure>
-      <figure data-cap="省级文保碑 · 清风店战役旧址"><img src="img/relic.jpg" alt="河北省文物保护单位清风店战役旧址碑" loading="lazy"></figure>
-      <figure data-cap="纪念馆 · 展陈"><img src="img/hall.jpg" alt="纪念馆展厅" loading="lazy"></figure>
-      <figure data-cap="《清风店歼灭战》连环画"><img src="img/comics.jpg" alt="清风店歼灭战连环画" loading="lazy"></figure>
-      <figure data-cap="1947 · 历史影像"><img src="img/history.jpg" alt="1947年历史影像" loading="lazy"></figure>
-      <figure data-cap="红色文化广场"><img src="img/plaza.jpg" alt="红色文化广场" loading="lazy"></figure>
-      <figure data-cap="红色街区彩绘"><img src="img/mural.jpg" alt="红色街区彩绘" loading="lazy"></figure>
+      <figure data-cap="纪念亭 · 燕赵遗风" data-full="img/cover.jpg"><img src="img/t/cover.jpg" alt="纪念亭与燕赵遗风碑" width="380" height="380" loading="lazy"></figure>
+      <figure data-cap="陵园大门 · 红五星" data-full="img/gate.jpg"><img src="img/t/gate.jpg" alt="陵园大门" width="380" height="380" loading="lazy"></figure>
+      <figure data-cap="烈士公墓区" data-full="img/tombs.jpg"><img src="img/t/tombs.jpg" alt="烈士公墓区" width="380" height="380" loading="lazy"></figure>
+      <figure data-cap="省级文保碑 · 清风店战役旧址" data-full="img/relic.jpg"><img src="img/t/relic.jpg" alt="河北省文物保护单位清风店战役旧址碑" width="380" height="380" loading="lazy"></figure>
+      <figure data-cap="纪念馆 · 展陈" data-full="img/hall.jpg"><img src="img/t/hall.jpg" alt="纪念馆展厅" width="380" height="380" loading="lazy"></figure>
+      <figure data-cap="《清风店歼灭战》连环画" data-full="img/comics.jpg"><img src="img/t/comics.jpg" alt="清风店歼灭战连环画" width="380" height="380" loading="lazy"></figure>
+      <figure data-cap="1947 · 历史影像" data-full="img/history.jpg"><img src="img/t/history.jpg" alt="1947年历史影像" width="380" height="380" loading="lazy"></figure>
+      <figure data-cap="红色文化广场" data-full="img/plaza.jpg"><img src="img/t/plaza.jpg" alt="红色文化广场" width="380" height="380" loading="lazy"></figure>
+      <figure data-cap="红色街区彩绘" data-full="img/mural.jpg"><img src="img/t/mural.jpg" alt="红色街区彩绘" width="380" height="380" loading="lazy"></figure>
     </div>
   </div>
 </section>
@@ -475,7 +476,7 @@ footer .fm{display:flex;justify-content:space-between;gap:14px;margin-top:14px;c
   var lb=document.getElementById('lb'), lbi=document.getElementById('lbi'),
       lbc=document.getElementById('lbc'), figs=[].slice.call(document.querySelectorAll('#g9 figure'));
   function open(f){
-    lbi.src=f.querySelector('img').src; lbi.alt=f.querySelector('img').alt;
+    var full=f.getAttribute('data-full'); lbi.src=full||f.querySelector('img').src; lbi.alt=f.querySelector('img').alt;
     lbc.textContent=f.getAttribute('data-cap')||'';
     lb.classList.add('on');
   }
